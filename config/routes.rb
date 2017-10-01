@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :wikis
+
   devise_for :users
   # Make this default landing page
   root 'welcome#index'
