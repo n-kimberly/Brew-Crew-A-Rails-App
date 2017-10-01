@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.2'
+ruby '2.4.0'
 
 group :development, :test do
   gem 'spring'
