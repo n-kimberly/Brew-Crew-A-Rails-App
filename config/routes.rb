@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Make this default landing page
+  root 'welcome#index'
+  # Allow users to visit /about instead of /welcome/about
+  get 'about' => 'welcome#about'
+
 end
