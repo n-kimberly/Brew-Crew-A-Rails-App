@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.2'
-ruby '2.3.4'
+ruby '2.4.0'
 
 group :development, :test do
   gem 'spring'
@@ -30,3 +30,4 @@ gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'figaro'
 gem 'devise'
+gem 'pundit'
