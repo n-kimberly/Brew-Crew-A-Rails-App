@@ -1,5 +1,7 @@
 class WikisController < ApplicationController
 
+# before_action :authorize_destruction, only: :destroy
+
   def index
     @user = User.find_by(id: session[:user_id])
     @wikis = Wiki.all
@@ -48,6 +50,7 @@ class WikisController < ApplicationController
 
   def destroy
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
 
     if @wiki.destroy
       flash[:notice] = "\"#{@wiki.title}\" was deleted successfully."
@@ -57,4 +60,14 @@ class WikisController < ApplicationController
       render :show
     end
   end
+
+# private
+#
+#   def authorize_destruction
+#     wiki = Wiki.find(params[:id])
+#     unless current_user == wiki.user || current_user.admin?
+#       flash[:alert] = "You must be the author or an admin to do that."
+#       redirect_to wikis_path
+#     end
+#   end
 end
