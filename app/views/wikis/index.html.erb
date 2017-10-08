@@ -1,16 +1,21 @@
 <h1>All Wikis <%= link_to "Create New Wiki", new_wiki_path, class: 'btn btn-success' %></h1>
 
 <% @wikis.each do |wiki| %>
+  <% if current_user.premium? || current_user.admin? %>
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-        <%-# Show private wikis if premium/admin. Otherwise, show only public wikis -%>
-        <% if current_user.premium? || current_user.admin? %>
           <%= link_to wiki.title, wiki %>
-        <% elsif wiki.private == false %>
-          <%= link_to wiki.title, wiki %>
-        <% end %>
       </h4>
     </div>
   </div>
+  <% elsif wiki.private != true %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+          <%= link_to wiki.title, wiki %>
+      </h4>
+    </div>
+  </div>
+  <% end %>
 <% end %>
