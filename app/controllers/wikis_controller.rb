@@ -1,7 +1,5 @@
 class WikisController < ApplicationController
 
-# before_action :authorize_destruction, only: :destroy
-
   def index
     @user = User.find_by(id: session[:user_id])
     @wikis = Wiki.all
@@ -19,6 +17,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.new
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.private = params[:wiki][:private]
     @wiki.user = current_user
 
     if @wiki.save
@@ -38,6 +37,7 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.private = params[:wiki][:private]
 
     if @wiki.save
       flash[:notice] = "Wiki was updated."
@@ -61,13 +61,9 @@ class WikisController < ApplicationController
     end
   end
 
-# private
-#
-#   def authorize_destruction
-#     wiki = Wiki.find(params[:id])
-#     unless current_user == wiki.user || current_user.admin?
-#       flash[:alert] = "You must be the author or an admin to do that."
-#       redirect_to wikis_path
-#     end
-#   end
+private
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :private)
+  end
+
 end

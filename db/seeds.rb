@@ -9,8 +9,7 @@
 require 'faker'
 include Faker
 
-
-10.times do
+5.times do
   User.create!(
     email: Internet.email,
     password: 'password',
@@ -19,7 +18,7 @@ include Faker
 end
 users = User.all #  Standard by default
 
-100.times do
+10.times do
   wiki = Wiki.create!(
     user: users.sample,
     title: Company.bs,
@@ -27,6 +26,13 @@ users = User.all #  Standard by default
     private: false
   )
 end
+
+wiki = Wiki.create!(
+  user: users.sample,
+  title: "Here lies a private wiki.",
+  body: "It holds all of the world's secrets.",
+  private: true
+)
 
 wikis = Wiki.all
 
