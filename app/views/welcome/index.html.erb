@@ -1,6 +1,34 @@
-<div class = "jumbotron">
-  <h1> Welcome to nyWiki </h1>
-  <p>
-    <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %> or <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> today!
-  </p>
+<div class="container" id="header">
+  <h1> The Brew Crew </h1>
+  <h3> Local Hipsters Sound Off on Craft Beer! <h3>
+  <h4>
+    <% if current_user %>
+    Welcome.
+    <% else %>
+    <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %> or <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> today.
+    <% end %>
+   </h4>
+</div>
+
+<div class="container" id="banner">
+  <h2> Meet our team </h2>
+</div>
+
+<div class = "container" id="about">
+  <div class="row">
+    <div class="col-md-4">
+      <h4>bearded-admin@example.com</h4>
+      <p>I am the bearded-admin. I've made everybody's password 'password', so hack away!</p>
+      <img src="assets/bearded-admin.png" alt="Bearded Admin" height="200" width="200">
+    </div>
+    <div class="col-md-4">
+      <h4>premium-sriracha@example.com</h4>
+      <p>I've got the best sriracha pinterest board and am a premium member on this site.</p>
+      <img src="assets/sriracha.jpg" alt="Pocket Sriracha" height="200" width="200">
+    </div>
+    <div class="col-md-4">
+      <h4>standard-cronut@example.com</h4>
+      <p>I'm an oxymoron because cronuts are <strong>not</strong> standard.</p>
+      <img src="assets/standard-cronut.jpg" alt="Sliced Cronut" height="200" width="200">
+    </div>
 </div>
