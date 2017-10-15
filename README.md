@@ -14,7 +14,7 @@ At nyWiki, users can sign up and sign in to create, read, update, and delete pos
 - As a user, I want to upgrade my account from a free to a paid plan
 - As a premium user, I want to create private wiki
 - As a user, I want to edit wikis using Markdown syntax
-- As a premium user, I want to add and remove collaborators for my private wiki
+- As a premium user, I want to add and remove collaborations for my private wiki
 
 ## Built With
 

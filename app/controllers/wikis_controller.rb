@@ -6,6 +6,9 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
+    @users = User.where.not(id: current_user.id)
+    @collaborations = @wiki.collaborations
+    get_collaborator_ids
   end
 
   def new
@@ -30,6 +33,9 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @users = User.where.not(id: current_user.id)
+    @collaborations = @wiki.collaborations
+    get_collaborator_ids
   end
 
   def update
@@ -49,11 +55,9 @@ class WikisController < ApplicationController
 
   def destroy
     @wiki = Wiki.find(params[:id])
-    authorize @wiki
-
     if @wiki.destroy
       flash[:notice] = "\"#{@wiki.title}\" was deleted successfully."
-      redirect_to @wiki
+      redirect_to wikis_path
     else
       flash.now[:alert] = "There was an error deleting the post."
       render :show
@@ -63,6 +67,12 @@ class WikisController < ApplicationController
 private
   def wiki_params
     params.require(:wiki).permit(:title, :body, :private)
+  end
+  def get_collaborator_ids
+    @collaborator_ids = Array.new
+    @wiki.collaborations.each do |collaboration|
+      @collaborator_ids.push User.find_by_id(collaboration.user_id).id
+    end
   end
 
 end

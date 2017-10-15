@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-
+  
   has_many :wikis, dependent: :destroy
+  has_many :collaborations
+  has_many :shared_wikis, through: :collaborations, source: :wiki
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
