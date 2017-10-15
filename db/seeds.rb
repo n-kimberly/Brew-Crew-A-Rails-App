@@ -27,13 +27,6 @@ users = User.all #  Standard by default
   )
 end
 
-wiki = Wiki.create!(
-  user: users.sample,
-  title: "Here lies a private wiki.",
-  body: "It holds all of the world's secrets.",
-  private: true
-)
-
 wikis = Wiki.all
 
 admin = User.create!(

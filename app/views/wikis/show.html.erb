@@ -4,7 +4,7 @@
   <div class="col-md-8">
     <p><%= markdown(@wiki.body) %></p>
     <p> Private? <%= @wiki.private %></p>
-    <p> Author: <%= @wiki.user.email %></p>
+    <p> Owner: <%= @wiki.user.email %></p>
     <%= render partial: 'collaborations/list', locals: { wiki: @wiki } %>
   </div>
   <div class="col-md-4">
