@@ -1,12 +1,12 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <% if current_user.standard? %>
-  <h3 class = "text-danger">You are currently a standard member of nyWiki</h3>
+  <h3 class = "text-danger">You are currently a standard member of BrewCrew</h3>
   <%= link_to "Upgrade", new_charge_path, class: 'btn btn-success' %>
 <% end %>
 
 <% if current_user.premium? %>
-  <h3 class = "text-success">You are currently a premium member of nyWiki</h3>
+  <h3 class = "text-success">You are currently a premium member of BrewCrew</h3>
   <%= link_to "Downgrade", downgrade_user_path(current_user), data: { confirm: "Are you sure you want to downgrade? All of your wikis will be made public. You will still be charged for the month if you are downgrading after the 15th of the month." }, class: 'btn btn-danger' %>
 <% end %>
 

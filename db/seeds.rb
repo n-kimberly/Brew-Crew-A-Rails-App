@@ -21,8 +21,8 @@ users = User.all #  Standard by default
 10.times do
   wiki = Wiki.create!(
     user: users.sample,
-    title: Company.bs,
-    body: Lorem.paragraphs.join(" "),
+    title: Beer.name,
+    body: Hipster.paragraphs.join(" "),
     private: false
   )
 end
@@ -37,21 +37,21 @@ wiki = Wiki.create!(
 wikis = Wiki.all
 
 admin = User.create!(
-  email: 'admin@example.com',
+  email: 'bearded-admin@example.com',
   password: 'password',
   confirmed_at: Time.now,
   role: 'admin'
 )
 
 premium = User.create!(
-  email: 'premium@example.com',
+  email: 'premium-sriracha@example.com',
   password: 'password',
   confirmed_at: Time.now,
   role: 'premium'
 )
 
 standard = User.create!(
-  email: 'standard@example.com',
+  email: 'standard-cronut@example.com',
   password: 'password',
   confirmed_at: Time.now,
   role: 'standard'

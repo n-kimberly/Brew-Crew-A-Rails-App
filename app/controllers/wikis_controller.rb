@@ -1,5 +1,4 @@
 class WikisController < ApplicationController
-
   def index
     @user = User.find_by(id: session[:user_id])
     @wikis = Wiki.all
@@ -56,10 +55,6 @@ class WikisController < ApplicationController
 
   def destroy
     @wiki = Wiki.find(params[:id])
-    @users = User.where.not(id: current_user.id)
-    @collaborations = @wiki.collaborations
-    authorize @wiki
-
     if @wiki.destroy
       flash[:notice] = "\"#{@wiki.title}\" was deleted successfully."
       redirect_to wikis_path

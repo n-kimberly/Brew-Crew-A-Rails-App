@@ -1,4 +1,4 @@
-<h1>All Wikis <%= link_to "Create New Wiki", new_wiki_path, class: 'btn btn-success' %></h1>
+<h1>All Reviews <%= link_to "Create New Wiki", new_wiki_path, class: 'btn btn-success' %></h1>
 
 <% @wikis.each do |wiki| %>
   <% if current_user.premium? || current_user.admin? %>
