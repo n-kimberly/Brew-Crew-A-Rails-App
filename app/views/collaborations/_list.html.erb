@@ -2,7 +2,7 @@
 
 <h2> Collaborators </h2>
 <% @wiki.collaborations.each do |collaboration| %>
-  <%= link_to " ", [@wiki, collaboration], class: 'glyphicon glyphicon-remove red', method: :delete %>
+  <%= link_to " ", [@wiki, collaboration], class: 'btn btn-link glyphicon glyphicon-minus-sign', method: :delete %>
   <%= User.find_by_id(collaboration.user_id).email %>
   <br/>
 <% end %>
@@ -11,7 +11,7 @@
   <% if @collaborator_ids.include? user.id %>
   <% else %>
     <%= form_for [wiki, Collaboration.new] do |f| %>
-      <%= f.button " ", name: "id", value: user.id, class: 'glyphicon glyphicon-plus green'%>
+      <%= f.button " ", name: "id", value: user.id, class: 'btn btn-link glyphicon glyphicon-plus-sign'%>
       <%= user.email %>
     <% end %>
   <% end %>

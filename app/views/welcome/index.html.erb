@@ -1,9 +1,10 @@
 <div class="container" id="header">
   <h1> The Brew Crew </h1>
-  <h3> Local Hipsters Sound Off on Craft Beer! <h3>
+  <h4> Where Local Hipsters Sound Off. <h4>
+  <br />
   <h4>
     <% if current_user %>
-    Welcome.
+    <h4>  Welcome, <%= current_user.email %>! </h4>
     <% else %>
     <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %> or <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> today.
     <% end %>
@@ -17,18 +18,24 @@
 <div class = "container" id="about">
   <div class="row">
     <div class="col-md-4">
-      <h4>bearded-admin@example.com</h4>
-      <p>I am the bearded-admin. I've made everybody's password 'password', so hack away!</p>
-      <img src="assets/bearded-admin.png" alt="Bearded Admin" height="200" width="200">
+      <p>I am the bearded-admin, ultimate controller of this site.</p>
+      <h5>bearded-admin@example.com</h5>
+      <h5>password: password</h5>
+      <img src="assets/bearded-admin.jpg" alt="Bearded Admin" height="200" width="200">
+      <br /><br /><br /><br />
     </div>
     <div class="col-md-4">
-      <h4>premium-sriracha@example.com</h4>
-      <p>I've got the best sriracha pinterest board and am a premium member on this site.</p>
+      <p>I am premium-grade sriracha and premium member on this site.</p>
+      <h5>premium-sriracha@example.com</h5>
+      <h5>password: password</h5>
       <img src="assets/sriracha.jpg" alt="Pocket Sriracha" height="200" width="200">
+      <br /><br /><br /><br />
     </div>
     <div class="col-md-4">
-      <h4>standard-cronut@example.com</h4>
       <p>I'm an oxymoron because cronuts are <strong>not</strong> standard.</p>
+      <h5>standard-cronut@example.com</h5>
+      <h5>password: password</h5>
       <img src="assets/standard-cronut.jpg" alt="Sliced Cronut" height="200" width="200">
+      <br /><br /><br /><br />
     </div>
 </div>

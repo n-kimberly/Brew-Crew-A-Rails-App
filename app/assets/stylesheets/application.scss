@@ -17,9 +17,131 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.red {
-    color: red;
+.alert {
+  &.alert-success {
+      background-color: #ffffe0;
+      color: #996300;
+      border: none;
+  }
 }
-.green {
-    color: green;
+
+#header {
+  padding-top: 4rem;
+  background: url('/assets/beer-bg-2.jpg');
+  background-position: center;
+  background-size: cover;
+  text-shadow: 0 3px 5px rgba(0,0,0,.4);
+  width: 100%;
+  color: white;
+  height: 35rem;
+}
+
+#banner {
+  padding-top: 1rem;
+  color: gold;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+  height: 7rem;
+  width: 100%;
+}
+
+#about {
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Rock Salt', cursive;
+}
+
+body {
+  font-family: 'Dekko', cursive;
+  background-color: black;
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  text-align: left;
+  width: 80%;
+}
+
+img {
+  max-width:100%;
+  max-height:100%;
+}
+
+a {
+  color:gold;
+  &:hover,
+  &:focus {
+    color:gold;
+    background-color: #4c4000;
+  }
+}
+
+.nav {
+  background-color: black;
+  > li {
+    > a {
+      &:hover,
+      &:focus {
+        background-color: #4c4000;
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #665600;
+  > li {
+    > a {
+      &:hover,
+      &:focus {
+        background-color: #4c4000;
+        border: 1px solid #665600;
+      }
+    }
+  }
+}
+
+.col-md-4 {
+  > h5 {
+    color: #999999;
+  }
+}
+
+.field {
+  color: white;
+  > input {
+    background-color: #999999;
+    color: black;
+    border: none;
+  }
+}
+
+.btn {
+  &.btn-success {
+    color: black;
+    background-color: gold;
+    border: gold;
+    &:hover,
+    &:focus {
+      background-color: #b29600;
+    }
+  }
+  &.btn-danger {
+    color: black;
+    background-color: #999999;
+    border: #999999;
+    &:hover,
+    &:focus {
+      background-color: #454545;
+    }
+  }
+  &.btn-link {
+    color: gold;
+  }
 }
