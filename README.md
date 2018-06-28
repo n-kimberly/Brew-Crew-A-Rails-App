@@ -1,8 +1,8 @@
-# nyWiki
+# Brew Crew
 
-### nyWiki is a Wikipedia-inspired mock up meant to teach CRUD fundamentals
+### Brew Crew is a wiki site for beer reviews.
 
-At nyWiki, users can sign up and sign in to create, read, update, and delete posts.
+At Brew Crew, users can sign up and sign in to create, read, update, and delete reviews.
 
 ## Project Objectives
 
